@@ -3,11 +3,11 @@ const app = express();
 const path = require("path");
 const hbs = require("hbs");
 const async = require("hbs/lib/async");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
-const static_path = path.join(__dirname, "../public");
-const templates_path = path.join(__dirname, "../templates/views");
-const partials_path = path.join(__dirname, "../templates/partials");
+const static_path = path.join(__dirname, "./public");
+const templates_path = path.join(__dirname, "./templates/views");
+const partials_path = path.join(__dirname, "./templates/partials");
 
 require("./db/conn");
 const Contact = require("./models/contact");
