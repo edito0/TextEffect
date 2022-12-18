@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/TextEffect",{
+const DB = process.env.MONGODB_URI|| "mongodb+srv://edito:mohit280@cluster0.j8tvx.mongodb.net/texteffect?retryWrites=true&w=majority"
 
+mongoose.connect( DB,{
+                      
 }).then(()=>{
     console.log("Connection Successful");
-}).catch(()=>{  
+}).catch((err)=>{  
     console.log(" No Connection");
 });
+

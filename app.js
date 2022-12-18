@@ -13,7 +13,7 @@ require("./db/conn");
 const Contact = require("./models/contact");
 
 app.use(express.static(static_path));
-
+            
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
@@ -23,15 +23,15 @@ hbs.registerPartials(partials_path);
 
 
 app.get("/", (req, res) => {
-    res.render("index");
-})
+    res.render("index"); 
+}) 
 
 app.get("/about", (req, res) => {
     res.render("about");
 })
 
-app.get("/contact", (req, res) => {
-    res.render("contact");
+app.get("/contact", (req, res) => { 
+    res.render("contact"); 
 })
 
 app.post("/contact", async (req, res) => {
@@ -49,10 +49,13 @@ app.post("/contact", async (req, res) => {
     } catch (error) {
         res.status(400).send(error)
     }
-
+    
 })
-
 
 app.listen(port, () => {
     console.log(`The server is listening at port no. ${port}`);
-});
+});  
+
+
+
+
